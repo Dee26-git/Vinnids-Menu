@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refreshments and Bar - Vinnid Innovations</title>
+    
+    <style>
+        :root {
+            --pink-main: #ff2a85;
+            --pink-accent: #ff69b4;
+            --blue-glow: #38bdf8;
+            --dark-bg: #0b0f19;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url(drinks.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-container {
+            
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 5px solid rgba(255, 105, 180, 0.35);
+            border-radius: 35px;
+            padding: 3rem 2.5rem;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 0 35px rgba(255, 42, 133, 0.25), 0 20px 40px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--pink-main), var(--blue-glow));
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 42, 133, 0.6);
+        }
+
+        .category-title {
+            color: var(--pink-accent);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .drink-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .drink-item {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .drink-item:hover {
+            background: rgba(255, 105, 180, 0.08);
+            border-color: rgba(255, 105, 180, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 42, 133, 0.2);
+        }
+
+        .drink-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+        .drink-desc {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 0.3rem;
+        }
+
+        header {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-accent));
+            color: #ffffff;
+            padding: 0.9rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(255, 42, 133, 0.5);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 42, 133, 0.7);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <h1>Our Beverage & Bar Selection</h1>
+
+        <!-- Hot Beverages -->
+        <h2 class="category-title">Hot Beverages</h2>
+        <div class="drink-grid">
+            <div class="drink-item"><div class="drink-name">Latte</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Espresso</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Mochachino</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Cappuccino</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Flat White</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Five Roses Tea</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Green Tea</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Fresh Pack Tea</div><div class="drink-desc"></div></div>
+        </div>
+
+        <!-- Cold Beverages & Mocktails -->
+        <h2 class="category-title">Cold Beverages & Mocktails</h2>
+        <div class="drink-grid">
+            <div class="drink-item"><div class="drink-name">Soft Drinks</div><div class="drink-desc">Coca Cola, Fanta, Sprite, Diet Coke, Mirinda, Lemonade</div></div>
+            <div class="drink-item"><div class="drink-name">Juices & Refreshers</div><div class="drink-desc">Minute Maid, Fruiticana</div></div>
+            <div class="drink-item"><div class="drink-name">Mixers</div><div class="drink-desc">Soda Water, Tonic Water</div></div>
+            <div class="drink-item"><div class="drink-name">Brother's Mocktails</div><div class="drink-desc"> Delicious Mocktails</div></div>
+        </div>
+
+        <!-- Alcoholic Drinks -->
+        <h2 class="category-title">Bar & Spirits</h2>
+        <div class="drink-grid">
+            <div class="drink-item"><div class="drink-name">Ciders</div><div class="drink-desc"> refreshing fruit ciders</div></div>
+            <div class="drink-item"><div class="drink-name">Spirits & Gins</div><div class="drink-desc">Premium selections and botanicals</div></div>
+            <div class="drink-item"><div class="drink-name">Whiskeys</div><div class="drink-desc">Aged, smooth, and distinct profiles</div></div>
+            <div class="drink-item"><div class="drink-name">Wines</div><div class="drink-desc">Aged, smooth, Red and White wines-Natural sweet or dry</div></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="btn-group">
+            <a href="../ex menu/menu.html" class="back">back</a>
+        </div>
+    </header>
+
+</body>
+</html>
