@@ -59,8 +59,10 @@
         
       
         <div class="btn-group">
-              <a href="../index.html.html" class="back-btn">back</a>
-            <a href="../refreshments/menu 2.html" class="next-btn">next page</a>
+              <a href="../refreshments/menu 2.html" class="next-btn">next page</a> 
+            <a href="../index.html.html" class="back-btn">back</a>
+           
+
          
             
         </div>
@@ -68,7 +70,7 @@
  <style>
         :root {
             --blue-main: var(--blue-main);
-            --pink-accent: #ff14e4;
+            --pink-accent: #ff14c8;
             --blue-main: #2563eb;
             --dark-bg: #0f172a;
             --text-light: #f8fafc07;
@@ -145,7 +147,7 @@
             justify-content: center;
         }
 
-        /* Homepage matching button style for both next and back buttons */
+        /* button style for both next and back buttons */
         .next-btn, .back-btn {
             display: inline-block;
             background-color: var(--blue-main);
@@ -154,9 +156,9 @@
             font-size: 1.0rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 15px;
+            border-radius: 25px;
             box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .next-btn:hover, .back-btn:hover {
@@ -164,12 +166,9 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile Phone Optimization */
-        @media (max-width: 600px) {
-            body {
-                background-attachment: scroll;
-                padding: 1rem;
-            }
+       
+        
+            
 
             .btn-group {
                 flex-direction: column;
@@ -182,6 +181,6 @@
                 max-width: 280px;
                 text-align: center;
             }
-        }
+        
     </style>
 </body>
