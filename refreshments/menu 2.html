@@ -7,7 +7,7 @@
     
     <style>
         :root {
-            --pink-main: #ff2a85;
+            --pink-main: #f503c1;
             --pink-accent: #ff69b4;
             --blue-glow: #38bdf8;
             --dark-bg: #0b0f19;
@@ -23,7 +23,7 @@
 
         body {
             min-height: 100vh;
-            background-image: url(drinks.png);
+            background-image: url(../update/drinks.png);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -38,15 +38,14 @@
         }
 
         .menu-container {
-            
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(16px);
             border: 5px solid rgba(255, 105, 180, 0.35);
             border-radius: 35px;
             padding: 3rem 2.5rem;
             max-width: 900px;
             width: 100%;
-            box-shadow: 0 0 35px rgba(255, 42, 133, 0.25), 0 20px 40px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 35px rgba(243, 4, 215, 0.25), 0 20px 40px rgba(0, 0, 0, 0.7);
             position: relative;
             overflow: hidden;
         }
@@ -75,14 +74,14 @@
             margin-top: 2rem;
             margin-bottom: 1rem;
             text-align: center;
-            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+            text-shadow: 0 0 10px rgba(241, 9, 195, 0.5);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 0.5rem;
         }
 
         .drink-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
@@ -100,13 +99,13 @@
             background: rgba(255, 105, 180, 0.08);
             border-color: rgba(255, 105, 180, 0.4);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 42, 133, 0.2);
+            box-shadow: 0 5px 15px rgba(225, 4, 126, 0.2);
         }
 
         .drink-name {
-            font-size: 1.2rem;
+            font-size: 1.0rem;
             font-weight: bold;
-            color: #ffffff;
+            color: #ffffffb7;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
 
@@ -119,28 +118,42 @@
         header {
             margin-top: 2.5rem;
             text-align: center;
+            width: 100%;
         }
 
-        .back-btn {
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Fixed button issue code */
+        .back-btn, .feedback-btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-accent));
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: #ffffff;
-            padding: 0.9rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0 5px 20px rgba(255, 42, 133, 0.5);
+            border-radius: 25px;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            max-width: 240px;
+            text-align: center;
         }
 
-        .back-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 42, 133, 0.7);
-            filter: brightness(1.1);
+        .back-btn:hover, .feedback-btn:hover {
+            background-color: var(--pink-main);
+            border-color: var(--pink-main);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 42, 133, 0.4);
         }
     </style>
 </head>
@@ -152,38 +165,61 @@
         <!-- Hot Beverages -->
         <h2 class="category-title">Hot Beverages</h2>
         <div class="drink-grid">
-            <div class="drink-item"><div class="drink-name">Latte</div><div class="drink-desc"></div></div>
-            <div class="drink-item"><div class="drink-name">Espresso</div><div class="drink-desc"></div></div>
-            <div class="drink-item"><div class="drink-name">Mochachino</div><div class="drink-desc"></div></div>
-            <div class="drink-item"><div class="drink-name">Cappuccino</div><div class="drink-desc"></div></div>
-            <div class="drink-item"><div class="drink-name">Flat White</div><div class="drink-desc"></div></div>
-            <div class="drink-item"><div class="drink-name">Five Roses Tea</div><div class="drink-desc"></div></div>
-            <div class="drink-item"><div class="drink-name">Green Tea</div><div class="drink-desc"></div></div>
-            <div class="drink-item"><div class="drink-name">Fresh Pack Tea</div><div class="drink-desc"></div></div>
+            <div class="drink-item"><div class="drink-name">Latte (unavailable)</div><div class="drink-desc">Medium- k70 & Large- k85</div></div>
+            <div class="drink-item"><div class="drink-name">Espresso</div><div class="drink-desc"></div> Single- k45 & Double -k55</div>
+            <div class="drink-item"><div class="drink-name">Mochachino</div><div class="drink-desc"></div>Medium -k80 & Large -90</div>
+            <div class="drink-item"><div class="drink-name">Cappuccino</div><div class="drink-desc"></div>Medium- k70 & Large- k85</div>
+            <div class="drink-item"><div class="drink-name">Flat White(unavailable)</div><div class="drink-desc"></div>Medium- k70 & Large- k85</div>
+            <div class="drink-item"><div class="drink-name">Five Roses Tea</div><div class="drink-desc"></div>Medium- k45 & Large- k55</div>
+            <div class="drink-item"><div class="drink-name">Green Tea</div><div class="drink-desc"></div>Medium- k55 & Large- k65</div>
+            <div class="drink-item"><div class="drink-name">Fresh Pack Tea</div><div class="drink-desc"></div>Medium- k45 & Large- k55</div>
+            <div class="drink-item"><div class="drink-name">Americano</div><div class="drink-desc"></div>Medium- k50 & Large- k70</div>
+             <div class="drink-item"><div class="drink-name">Ginger & Lemon Tea</div><div class="drink-desc"></div>Medium- k50 & Large- k70</div>
         </div>
-
+                
+        <!-- Milkshakes-->
+         <h2 class="category-title">Milkshakes</h2>
+        <div class="drink-grid">
+            <div class="drink-item"><div class="drink-name">Strawberry Milkshakes</div><div class="drink-desc">Medium- k70 & Large- k85</div></div>
+            <div class="drink-item"><div class="drink-name">Vanilla Milkshakes</div><div class="drink-desc">Medium- k70 & Large- k85</div></div>
+         <div class="drink-item"><div class="drink-name">Chocolate Milkshakes</div><div class="drink-desc">Medium- k70 & Large- k85</div></div>
+         <div class="drink-item"><div class="drink-name">Cherry Riple</div><div class="drink-desc">Medium- k70 & Large- k85</div></div>
+        </div>
+        
         <!-- Cold Beverages & Mocktails -->
         <h2 class="category-title">Cold Beverages & Mocktails</h2>
         <div class="drink-grid">
-            <div class="drink-item"><div class="drink-name">Soft Drinks</div><div class="drink-desc">Coca Cola, Fanta, Sprite, Diet Coke, Mirinda, Lemonade</div></div>
-            <div class="drink-item"><div class="drink-name">Juices & Refreshers</div><div class="drink-desc">Minute Maid, Fruiticana</div></div>
-            <div class="drink-item"><div class="drink-name">Mixers</div><div class="drink-desc">Soda Water, Tonic Water</div></div>
-            <div class="drink-item"><div class="drink-name">Brother's Mocktails</div><div class="drink-desc"> Delicious Mocktails</div></div>
+            <div class="drink-item"><div class="drink-name">Soft Drinks</div><div class="drink-desc">Coca Cola, Fanta, Sprite, Diet Coke, Mirinda </div> 500ml- k15 & 350ml - k10</div>
+            <div class="drink-item"><div class="drink-name">Juices & Refreshers</div><div class="drink-desc">Minute Maid, Fruiticana</div> k15 </div>
+            <div class="drink-item"><div class="drink-name">Mixers</div><div class="drink-desc">Soda Water, Tonic Water & Lemonade</div> k25</div>
+            <div class="drink-item"><div class="drink-name">Brother's Mocktails</div><div class="drink-desc"> Delicious Mocktails</div> k30 </div>
         </div>
 
         <!-- Alcoholic Drinks -->
         <h2 class="category-title">Bar & Spirits</h2>
         <div class="drink-grid">
-            <div class="drink-item"><div class="drink-name">Ciders</div><div class="drink-desc"> refreshing fruit ciders</div></div>
-            <div class="drink-item"><div class="drink-name">Spirits & Gins</div><div class="drink-desc">Premium selections and botanicals</div></div>
+            <div class="drink-item"><div class="drink-name">Ciders</div><div class="drink-desc"> refreshing fruit ciders</div>From k45- k70</div>
+            <div class="drink-item"><div class="drink-name"> Gins</div><div class="drink-desc">Premium selections and botanicals</div></div>
             <div class="drink-item"><div class="drink-name">Whiskeys</div><div class="drink-desc">Aged, smooth, and distinct profiles</div></div>
             <div class="drink-item"><div class="drink-name">Wines</div><div class="drink-desc">Aged, smooth, Red and White wines-Natural sweet or dry</div></div>
+             <div class="drink-item"><div class="drink-name">Brandy</div><div class="drink-desc">Aged, smooth</div></div>
+              <div class="drink-item"><div class="drink-name">Rum</div><div class="drink-desc">Aged, smooth</div></div>
+               <div class="drink-item"><div class="drink-name">Shots</div><div class="drink-desc">Jagger bomb & Blow Job</div></div>
+        </div>
+        
+        <h2 class="category-title">Cocktails</h2>
+   <div class="drink-grid">
+             <div class="drink-item"><div class="drink-name">Shandys</div><div class="drink-desc"></div>Malawian & Rock</div>
+              <div class="drink-item"><div class="drink-name">Minty Mojito</div><div class="drink-desc"></div></div>
+              <div class="drink-item"><div class="drink-name">Irish coffee</div><div class="drink-desc"></div></div>
+              <div class="drink-item"><div class="drink-name">Espresso Martini</div><div class="drink-desc"></div></div>
         </div>
     </div>
 
     <header>
         <div class="btn-group">
-            <a href="../ex menu/menu.html" class="back">back</a>
+            <a href="../ex menu/menu.html" class="back-btn">Back</a>
+            <a href="../ex menu/menu.html" class="feedback-btn">Leave Feedback</a>
         </div>
     </header>
 
