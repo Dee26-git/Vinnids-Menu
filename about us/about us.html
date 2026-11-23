@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Vinnid Innovations</title>
+    <style>
+        :root {
+            /* Palette: Deep Slate, Electric Blue, Hot Pink */
+            --bg-dark: #090d16;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            
+            /* Gradient Accents */
+            --pink-accent: #ec4899;
+            --pink-glow: rgba(236, 72, 153, 0.35);
+            --blue-accent: #3b82f6;
+            --blue-glow: rgba(59, 130, 246, 0.35);
+            --cyan-accent: #06b6d4;
+            
+            --gradient-primary: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+            --gradient-hover: linear-gradient(135deg, #f472b6 0%, #a78bfa 50%, #60a5fa 100%);
+            --gradient-blue-pink: linear-gradient(135deg, #38bdf8, #f472b6);
+
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            /* Soft Ambient Glow in Background */
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.12) 0%, transparent 45%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Navigation Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: rgba(9, 13, 22, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--card-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand-heading {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .brand-heading span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 8px rgba(236, 72, 153, 0.3));
+        }
+
+        .btn-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+
+        .btn-modal {
+            background: var(--gradient-primary);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px var(--pink-glow), 0 0 20px var(--blue-glow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-modal:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(236, 72, 153, 0.5), 0 0 25px rgba(59, 130, 246, 0.5);
+            background: var(--gradient-hover);
+        }
+
+        /* Main Section & Cards Grid */
+        main {
+            padding: 60px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .about-modal-content {
+            text-align: center;
+        }
+
+        .about-modal-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-intro {
+            max-width: 720px;
+            margin: 0 auto 45px auto;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        /* Glassmorphism Cards with Gradient Border Effects */
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+
+        /* Top accent line on each card */
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-primary);
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(236, 72, 153, 0.4);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+            background: rgba(9, 13, 22, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .footer-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            background: rgba(236, 72, 153, 0.15);
+            border-color: rgba(236, 72, 153, 0.5);
+            color: #f472b6;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="brand-heading"><span style="text-align: center;">VINNID INNOVATIONS</span></h1>
+        <div class="btn-group">
+            <a href="../index.html.html" class="nav-link">Homepage</a>
+           
+        </div>
+    </header>
+
+    <main id="about-section">
+        <div class="about-modal-content">
+            <h2>About Our Enterprise</h2>
+            <p class="brand-intro">
+                We are a multi-disciplinary enterprise dedicated to delivering excellence across lifestyle, hospitality, mobility, and structural craftsmanship. Every service we offer is backed by professional management and meticulous attention to detail.
+            </p>
+
+            <div class="services-grid">
+                <!-- 1. Event Management -->
+                <div class="service-card">
+                    <h3><span>📅</span> Event Management</h3>
+                    <p>End-to-end planning, styling, and coordination for corporate functions, weddings, and private celebrations. We handle vendor management, logistics, and on-the-day execution so your event is seamless and stress-free.</p>
+                </div>
+                <!-- 2. indoor Catering -->
+                <div class="service-card">
+                    <h3><span>🍽️</span> In door Catering</h3>
+                    <p>Decide between plated service, buffet, or family-style dining. Choose what best suits your needs.</p>
+                </div>
+
+                <!-- 2. Outdoor Catering -->
+                <div class="service-card">
+                    <h3><span>🍽️</span> Outdoor Catering</h3>
+                    <p>Exquisite mobile culinary experiences for open-air gatherings, festivals, and private parties. Featuring customizable menus, live cooking stations, and professional hospitality staff.</p>
+                </div>
+
+                 <div class="service-card">
+                    <h3><span>🏡 </span> Accomodation</h3>
+                    <p>
+Modern, secure, and comfortable stays designed to feel like a home away from home, whether you're visiting for business, leisure, or a special celebration</p>
+                </div>
+
+                <!-- 3. Bakehouse -->
+                <div class="service-card">
+                    <h3><span>🥖</span> Bakehouse</h3>
+                    <p>Artisanal baking specializing in custom celebration cakes, fresh daily pastries, gourmet dessert tables, and breads crafted with premium ingredients for unmatched taste and presentation.</p>
+                </div>
+
+                <!-- 4. Car Hiring -->
+                <div class="service-card">
+                    <h3><span>🚗</span> Car Hiring</h3>
+                    <p>Reliable, well-maintained vehicle rentals for personal travel, executive transfers, and special events. Choose from flexible self-drive options or professional chauffeur services.</p>
+                </div>
+
+                <!-- 5. Wrought Iron -->
+                <div class="service-card">
+                    <h3><span>🛡️</span> Wrought Iron</h3>
+                    <p>Custom architectural metalwork combining heavy-duty security with artistic elegance. Specializing in security gates, decorative burglar bars, stair railings, and custom fencing.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="" class="footer-link">Contact Us</a>
+    </footer>
+
+</body>
+</html>
